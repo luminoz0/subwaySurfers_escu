@@ -67,5 +67,5 @@
         "*.sln": "*.csproj",
         "*.slnx": "*.csproj"
     },
-    "dotnet.defaultSolution": "subwaySurfers_2.0-main.slnx"
+    "dotnet.defaultSolution": "subwaySurfers.slnx"
 }
