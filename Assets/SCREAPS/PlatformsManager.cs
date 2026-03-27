@@ -35,13 +35,13 @@ public class PlatformsManager : MonoBehaviour
             Vector3 spawnPosition = Vector3.zero;
             if (lastPlatform != null)
             {
-                spawnPosition = lastPlatform.transform.position + lastPlatform.GetComponent<Collider>().bounds.size.z * Vector3.forward * 0.5f;
+                spawnPosition = lastPlatform.transform.localPosition + lastPlatform.GetComponent<Collider>().bounds.size.z * Vector3.forward * 0.5f;
             }
             instantiatePool.InstantiateObject(spawnPosition);
             GameObject newPlatform = instantiatePool.GetCurrentObject();
             newPlatform.transform.SetParent(transform);
             Collider newCol = newPlatform.GetComponent<Collider>();
-            newPlatform.transform.position = spawnPosition + newCol.bounds.size.z * Vector3.forward * 0.5f;
+            newPlatform.transform.localPosition = spawnPosition + newCol.bounds.size.z * Vector3.forward * 0.5f;
             lastPlatform = newPlatform;
         }
     }
